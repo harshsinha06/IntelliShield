@@ -1,0 +1,66 @@
+{
+  "feature_spec_version": "lexical-v1",
+  "feature_names": [
+    "url_length",
+    "hostname_length",
+    "domain_length",
+    "dot_count",
+    "subdomain_count",
+    "hyphen_count",
+    "special_char_count",
+    "digit_count",
+    "has_ip_address",
+    "uses_https",
+    "has_at_symbol",
+    "is_url_shortener",
+    "has_suspicious_keyword",
+    "path_segment_count",
+    "query_param_count"
+  ],
+  "keyword_lexicon": [
+    "login",
+    "signin",
+    "verify",
+    "verification",
+    "account",
+    "secure",
+    "security",
+    "update",
+    "confirm",
+    "password",
+    "banking",
+    "wallet",
+    "suspend",
+    "suspended",
+    "invoice",
+    "credential",
+    "unlock",
+    "validate"
+  ],
+  "shorteners": [
+    "bit.ly",
+    "tinyurl.com",
+    "t.co",
+    "goo.gl",
+    "ow.ly",
+    "is.gd",
+    "buff.ly",
+    "cutt.ly",
+    "rb.gy",
+    "shorturl.at",
+    "tiny.cc"
+  ],
+  "max_url_length": 16384,
+  "label_mapping": {
+    "legitimate": 0,
+    "phishing": 1
+  },
+  "source_label_mapping": {
+    "phiusiil_0": "phishing",
+    "phiusiil_1": "legitimate",
+    "model_0": "legitimate",
+    "model_1": "phishing"
+  },
+  "domain_length_rule": "For a non-IP hostname with more than two labels, domain_length is the length of the last two labels joined by a dot. Otherwise it is the hostname length. This is not a Public Suffix List lookup.",
+  "subdomain_count_rule": "max(label_count - 2, 0) for a non-IP hostname, else 0."
+}
